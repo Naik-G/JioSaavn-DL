@@ -7,7 +7,10 @@ try:
 	from tqdm.auto import tqdm
 except:
 	os.system('pip install tqdm')
-	os.system('clear')
+	try:
+		os.system('cls')
+	except:
+		os.system('clear')
 	print('\nPlease re-open this script again!')
 	input()
 
@@ -115,7 +118,10 @@ while True:
 █▄█ █ █▄█ ▄█ █▀█ █▀█ ▀▄▀ █░▀█\n''')
 	print('JioSaavn DL by S1 (V1.0)\n')
 	qry = "+".join(str(input('Search: ')).lower().split())
-	os.system("clear")
+	try:
+		os.system('cls')
+	except:
+		os.system('clear')
 	if not qry:
 		continue
 	
@@ -129,12 +135,18 @@ while True:
 	try:
 		choose = int(input('Choose: ').strip())
 	except:
-		os.system('clear')
+		try:
+			os.system('cls')
+		except:
+			os.system('clear')
 		continue
 	try:
 		url = play(data[choose-1]['id'])
 		if url != False:
-			os.system("clear")
+			try:
+				os.system('cls')
+			except:
+				os.system('clear')
 			name = data[choose-1]['title']
 			#print("Download: "+url)
 			save(url,name)
